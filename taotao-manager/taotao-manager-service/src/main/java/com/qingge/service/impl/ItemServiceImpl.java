@@ -12,6 +12,7 @@ import com.qingge.mapper.TbItemMapper;
 import com.qingge.pojo.TbItem;
 import com.qingge.pojo.TbItemExample;
 import com.qingge.pojo.TbItemExample.Criteria;
+import com.qingge.properties.ResourceProperties;
 import com.qingge.service.ItemService;
 
 @Service
@@ -55,5 +56,5 @@ public class ItemServiceImpl implements ItemService {
 		result.setTotal(pageInfo.getTotal());
 		return result;
 	}
-
+	
 }
