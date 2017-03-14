@@ -1,5 +1,6 @@
 package com.qingge.service.impl;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,8 @@ import org.springframework.stereotype.Service;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.qingge.common.pojo.EasyUIDataGridResult;
+import com.qingge.common.pojo.TaotaoResult;
+import com.qingge.common.utils.IDUtils;
 import com.qingge.mapper.TbItemMapper;
 import com.qingge.pojo.TbItem;
 import com.qingge.pojo.TbItemExample;
@@ -55,6 +58,20 @@ public class ItemServiceImpl implements ItemService {
 		PageInfo<TbItem> pageInfo=new PageInfo<TbItem>(list);
 		result.setTotal(pageInfo.getTotal());
 		return result;
+	}
+
+	@Override
+	public TaotaoResult createItem(TbItem tbItem) {
+		// TODO Auto-generated method stub
+		//item补全
+		tbItem.setId(IDUtils.genItemId());
+		//商品的状态
+		tbItem.setStatus((byte) 1);
+		tbItem.setCreated(new Date());
+		tbItem.setUpdated(new Date());
+		//插入到数据库
+		itemMapper.insert(tbItem);
+		return TaotaoResult.ok();
 	}
 	
 }

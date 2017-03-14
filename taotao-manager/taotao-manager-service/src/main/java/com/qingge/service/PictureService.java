@@ -1,8 +1,9 @@
 package com.qingge.service;
 
+import java.util.Map;
+
 import org.springframework.web.multipart.MultipartFile;
 
-import com.sun.xml.internal.xsom.impl.scd.Iterators.Map;
 
 public interface PictureService {
 

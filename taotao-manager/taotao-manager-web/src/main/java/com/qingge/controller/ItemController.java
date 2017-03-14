@@ -1,15 +1,15 @@
 package com.qingge.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.qingge.common.pojo.EasyUIDataGridResult;
+import com.qingge.common.pojo.TaotaoResult;
 import com.qingge.pojo.TbItem;
-import com.qingge.properties.ResourceProperties;
 import com.qingge.service.ItemService;
 
 /**
@@ -37,4 +37,11 @@ public class ItemController {
 	public EasyUIDataGridResult getItemList(Integer page,Integer rows){
 		return itemService.getItemList(page, rows);
 	}
+	
+	@RequestMapping(value="/item/save",method=RequestMethod.POST)
+	@ResponseBody
+	public TaotaoResult createItem(TbItem tbItem){
+		return itemService.createItem(tbItem);
+	}
+	
 }
