@@ -1,5 +1,6 @@
 package com.qingge.service.impl;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,11 +25,21 @@ public class ItemParamServiceImpl implements ItemParamService {
 		TbItemParamExample tbItemParamExample=new TbItemParamExample();
 		Criteria criteria = tbItemParamExample.createCriteria();
 		criteria.andItemCatIdEqualTo(cid);
-		List<TbItemParam> itemList = tbItemParamMapper.selectByExample(tbItemParamExample);
+		List<TbItemParam> itemList = tbItemParamMapper.selectByExampleWithBLOBs(tbItemParamExample);
 		//判断结果是否有值
 		if(itemList!=null && itemList.size()>0){
 			return TaotaoResult.ok(itemList.get(0));
 		}
+		return TaotaoResult.ok();
+	}
+
+	@Override
+	public TaotaoResult insertItemParam(TbItemParam tbItemParam) {
+		// TODO Auto-generated method stub
+		//补全pojo
+		tbItemParam.setCreated(new Date());
+		tbItemParam.setUpdated(new Date());
+		tbItemParamMapper.insert(tbItemParam);
 		return TaotaoResult.ok();
 	}
 
