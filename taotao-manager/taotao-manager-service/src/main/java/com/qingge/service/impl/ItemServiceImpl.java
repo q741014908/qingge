@@ -19,9 +19,7 @@ import com.qingge.pojo.TbItemDesc;
 import com.qingge.pojo.TbItemExample;
 import com.qingge.pojo.TbItemExample.Criteria;
 import com.qingge.pojo.TbItemParamItem;
-import com.qingge.properties.ResourceProperties;
 import com.qingge.service.ItemService;
-import com.sun.tools.internal.ws.wsdl.document.jaxws.Exception;
 
 @Service
 public class ItemServiceImpl implements ItemService {

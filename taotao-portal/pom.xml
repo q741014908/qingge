@@ -6,12 +6,13 @@
 		<artifactId>taotao-parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>taotao-rest</artifactId>
+	<artifactId>taotao-portal</artifactId>
 	<packaging>war</packaging>
+
 	<dependencies>
 		<dependency>
 			<groupId>com.qingge</groupId>
-			<artifactId>taotao-manager-mapper</artifactId>
+			<artifactId>taotao-common</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<!-- Spring -->
@@ -35,6 +36,12 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-aspects</artifactId>
 		</dependency>
+
+		<!-- JSP相关 -->
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>servlet-api</artifactId>
@@ -53,7 +60,7 @@
   			<groupId>org.apache.tomcat.maven</groupId>
 			<artifactId>tomcat7-maven-plugin</artifactId>
   			<configuration>
-  				<port>8081</port>
+  				<port>8082</port>
   				<path>/</path>
   			</configuration>
   		</plugin>
