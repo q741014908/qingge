@@ -2,10 +2,8 @@ package com.qingge.controller;
 
 import java.util.List;
 
-import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -41,7 +39,13 @@ public class ContentCategoryController {
 	
 	@RequestMapping("/content/category/delete")
 	@ResponseBody
-	public TaotaoResult deleteContentCategory(Long parentId,@RequestParam("id")Long nodeId){
-		return null;
+	public TaotaoResult deleteContentCategory(@RequestParam("id")Long nodeId){
+		return contentCategoryService.deleteContentCategory(nodeId);
+	}
+	
+	@RequestMapping("/content/category/update")
+	@ResponseBody
+	public TaotaoResult updateContentCategory(@RequestParam("id")Long nodeId,String name){
+		return contentCategoryService.updateContentCategory(nodeId, name);
 	}
 }

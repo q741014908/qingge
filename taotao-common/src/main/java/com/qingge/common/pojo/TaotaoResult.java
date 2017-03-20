@@ -147,4 +147,8 @@ public class TaotaoResult {
         }
     }
 
+	public static ObjectMapper getMapper() {
+		return MAPPER;
+	}
+
 }

@@ -11,5 +11,7 @@ public interface ContentCategoryService {
 
 	TaotaoResult insertContentCategory(Long parentId,String name);
 	
-	TaotaoResult deleteContentCategory(Long parentId,Long nodeId);
+	TaotaoResult deleteContentCategory(Long nodeId);
+	
+	TaotaoResult updateContentCategory(Long id,String nodeText);
 }

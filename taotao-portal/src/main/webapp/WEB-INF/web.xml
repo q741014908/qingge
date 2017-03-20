@@ -47,6 +47,11 @@
 	<servlet-mapping>
 		<servlet-name>taotao-portal</servlet-name>
 		<!-- 伪静态 -->
+		<url-pattern>/service/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>taotao-portal</servlet-name>
+		<!-- 伪静态 -->
 		<url-pattern>*.html</url-pattern>
 	</servlet-mapping>
 
